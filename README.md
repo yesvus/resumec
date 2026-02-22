@@ -98,4 +98,8 @@ The script will:
 2. Fetch the target job posting
 3. Compile, score, and evaluate your experience against the job keywords
 4. Rewrite your CV deterministically
-5. Output the result to the `cvs/` directory
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
