@@ -1,0 +1,41 @@
+# {{ cv.name }}
+**{{ cv.target_role }}**
+
+> {{ cv.summary }}
+
+---
+## Contact
+- **Email:** {{ cv.contact.email }}
+{% if cv.contact.github %}- **GitHub:** {{ cv.contact.github }}{% endif %}
+{% if cv.contact.linkedin %}- **LinkedIn:** {{ cv.contact.linkedin }}{% endif %}
+
+---
+## Skills
+{% for cat in cv.skills %}
+- **{{ cat.name }}:** {{ cat.skills | join(', ') }}
+{% endfor %}
+
+---
+## Experience
+{% for exp in cv.experience %}
+### {{ exp.role }} @ {{ exp.company }} ({{ exp.start_date }} - {{ exp.end_date or 'Present' }})
+{% for bullet in exp.bullets %}
+* {{ bullet }}
+{% endfor %}
+{% endfor %}
+
+---
+## Selected Projects
+{% for proj in cv.projects %}
+### {{ proj.name }}
+*{{ proj.description }}* - Technologies: {{ proj.technologies | join(', ') }}
+{% for bullet in proj.bullets %}
+* {{ bullet }}
+{% endfor %}
+{% endfor %}
+
+---
+## Education
+{% for edu in cv.education %}
+### {{ edu.institution }} - {{ edu.degree }} ({{ edu.start_date }} - {{ edu.end_date or 'Present' }})
+{% endfor %}

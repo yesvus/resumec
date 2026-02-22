@@ -1,0 +1,22 @@
+[project]
+name = "resumec"
+version = "0.1.0"
+description = "Deterministic CV compiler"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.6",
+    "typer>=0.12",
+    "jinja2",
+    "httpx",
+    "beautifulsoup4",
+    "markdown-it-py",
+    "trafilatura",
+    "rapidfuzz",
+    "instructor",
+    "openai",
+    "python-dotenv",
+    "pydantic-settings",
+]
+
+[project.scripts]
+resumec = "resumec.cli:app"
